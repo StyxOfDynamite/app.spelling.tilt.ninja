@@ -12,17 +12,34 @@
     font-size: calc(10px + 2vmin);
     color: white;
 }
+
 section {
     padding: 0.5rem;
 }
+
 .word {
     display: block;
 }
+
 .underline {
     display: inline-flex;
     padding: 1rem;
     border-bottom: #222 solid 1px;
     margin: 0.2rem;
+}
+
+.letter {
+    display: inline-flex;
+    padding: 1rem;
+    border: #222 solid 1px;
+    &.hanging {
+        top: 2rem;
+        height: 2rem;
+        position: relative;
+    }
+    &.tall {
+        height: 2rem;
+    }
 }
 
 .output {

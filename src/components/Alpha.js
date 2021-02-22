@@ -9,8 +9,8 @@ const Alpha = (props) => {
 
     return (
         <ol>
-            {words.map((word) => (
-                <Underline word={word} />
+            {words.map((word, index) => (
+                <Underline word={word} index={index} key={index} />
             ))}
         </ol>
     );

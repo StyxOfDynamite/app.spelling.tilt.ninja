@@ -2,11 +2,13 @@ import './App.scss';
 import WordInput from './components/WordInput';
 import WordList from './components/WordList';
 import { useState } from 'react';
+import Boxes from './components/Boxes';
 import Alpha from './components/Alpha';
 
 const App = () => {
     const [word, setWord] = useState('');
     const [words, updateWords] = useState([]);
+    const [mode, setMode] = useState('alphabetical');
 
     const onInput = (e) => {
         setWord(e.target.value);
@@ -18,17 +20,30 @@ const App = () => {
         setWord('');
     };
 
+    const onChange = (e) => {
+        setMode(e.target.value);
+    };
+
     return (
         <div className="App">
             <header className="App-header">
-                <h1>Alphabetical</h1>
+                <select onChange={onChange}>
+                    <option value="alphabetical">Alphabetical</option>
+                    <option value="boxes">Boxes</option>
+                </select>
+                <h1>{mode}</h1>
             </header>
             <section className="no-print">
                 <WordInput onInput={onInput} onSubmit={onSubmit} word={word} />
             </section>
             <section className="output">
                 <WordList words={words} />
-                <Alpha words={words} />
+                {
+                    {
+                        alphabetical: <Alpha words={words} />,
+                        boxes: <Boxes words={words} />
+                    }[mode]
+                }
             </section>
         </div>
     );
