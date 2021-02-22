@@ -1,4 +1,6 @@
 const className = (letter) => {
+    letter = letter.toLowerCase();
+
     if (isHanging(letter)) {
         return 'letter hanging';
     }
