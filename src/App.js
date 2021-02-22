@@ -27,7 +27,7 @@ const App = () => {
     return (
         <div className="App">
             <header className="App-header">
-                <select onChange={onChange}>
+                <select onChange={onChange} className="no-print">
                     <option value="alphabetical">Alphabetical</option>
                     <option value="boxes">Boxes</option>
                 </select>
