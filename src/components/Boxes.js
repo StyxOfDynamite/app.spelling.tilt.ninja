@@ -25,7 +25,7 @@ const Boxes = (props) => {
     return (
         <ol>
             {props.words.map((word, index) => (
-                <Box word={word} index={index} key={index} />
+                <Box word={word.word} index={index} key={index} />
             ))}
         </ol>
     );
