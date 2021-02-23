@@ -24,7 +24,6 @@ const App = () => {
     const onAddWord = () => {
         updateWords((arr) => [...arr, { word: word, syllables: syllables }]);
         setWord('');
-        setSyllables(1);
     };
 
     const onChange = (e) => {
@@ -32,7 +31,7 @@ const App = () => {
     };
 
     const syllablesInput = (e) => {
-        setSyllables(e.target.value);
+        setSyllables(parseInt(e.target.value));
     };
 
     const sentenceInput = (e) => {
@@ -50,9 +49,14 @@ const App = () => {
                 <h1>{mode}</h1>
             </header>
             <section className="no-print">
-                <WordInput onInput={onInput} word={word} />
-                <SyllablesInput onInput={syllablesInput} value={syllables} />
-                <SentenceInput onInput={sentenceInput} value={sentence} />
+                <div className="input">
+                    <WordInput onInput={onInput} word={word} />
+                    <SyllablesInput
+                        onInput={syllablesInput}
+                        value={syllables}
+                    />
+                    <SentenceInput onInput={sentenceInput} value={sentence} />
+                </div>
                 <AddButton onClick={onAddWord} />
             </section>
             <section className="output">
