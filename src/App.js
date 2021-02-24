@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Select from 'react-select';
 import Alpha from './components/Alpha';
 import Boxes from './components/Boxes';
 import Sentences from './components/Sentences';
@@ -16,6 +17,12 @@ const App = () => {
     const [mode, setMode] = useState('alphabetical');
     const [syllables, setSyllables] = useState(1);
     const [sentence, setSentence] = useState('');
+    const options = [
+        { value: 'alphabetical', label: 'Alphabetical' },
+        { value: 'boxes', label: 'Boxes' },
+        { value: 'syllables', label: 'Syllables' },
+        { value: 'sentences', label: 'Sentences' }
+    ];
 
     const onInput = (e) => {
         setWord(e.target.value);
@@ -33,7 +40,7 @@ const App = () => {
     };
 
     const onChange = (e) => {
-        setMode(e.target.value);
+        setMode(e.value);
     };
 
     const syllablesInput = (e) => {
@@ -47,13 +54,20 @@ const App = () => {
     return (
         <div className="App">
             <header className="App-header">
-                <select onChange={onChange} className="no-print">
-                    <option value="alphabetical">Alphabetical</option>
-                    <option value="boxes">Boxes</option>
-                    <option value="syllables">Syllables</option>
-                    <option value="sentences">Sentences</option>
-                </select>
-                <h1>{mode}</h1>
+                <div className="select-container no-print">
+                    <Select onChange={onChange} options={options} />
+                </div>
+                <div className="print">
+                    <h1>{mode}</h1>
+                    {
+                        {
+                            alphabetical: `Arrange the words from the list in alphabetical order.`,
+                            boxes: `Fill in the correct boxes with the words from the list.`,
+                            syllables: `Group the words by the number of syllables they have.`,
+                            sentences: `Fill in the words in the sentences below.`
+                        }[mode]
+                    }
+                </div>
             </header>
             <section className="no-print">
                 <div className="input">
