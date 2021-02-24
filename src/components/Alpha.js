@@ -19,7 +19,12 @@ const Alpha = (props) => {
     return (
         <ol>
             {words.map((word, index) => (
-                <Underline mode="alpha" word={word.word} index={index} key={`alpha-${index}`} />
+                <Underline
+                    mode="alpha"
+                    word={word.word}
+                    index={index}
+                    key={`alpha-${index}`}
+                />
             ))}
         </ol>
     );

@@ -3,8 +3,10 @@ const Underline = (props) => {
     return (
         <li>
             {letters.map((letter, index) => (
-                <p key={`${props.mode}-underline-${index}`} className="underline">
-                </p>
+                <p
+                    key={`${props.mode}-underline-${index}`}
+                    className="underline"
+                ></p>
             ))}
         </li>
     );

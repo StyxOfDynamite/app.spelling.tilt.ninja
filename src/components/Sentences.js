@@ -1,4 +1,4 @@
-import { shuffle } from "./Shuffle";
+import { shuffle } from './Shuffle';
 
 const replaceWord = (word, sentence) => {
     let _s = '';
