@@ -12,7 +12,7 @@ const Sentences = (props) => {
     return (
         <div>
             {words.map((word, index) => (
-                <p key={`sentence-${index}`}>
+                <p className="sentence" key={`sentence-${index}`}>
                     {replaceWord(word.word, word.sentence)}
                 </p>
             ))}

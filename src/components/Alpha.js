@@ -1,5 +1,4 @@
 import Underline from './Underline';
-import { useEffect } from 'react';
 
 function sortWords(words) {
     words = words.sort((a, b) => {
