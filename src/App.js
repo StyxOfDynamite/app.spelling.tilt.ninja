@@ -40,7 +40,9 @@ const App = () => {
     };
 
     const sentenceInput = (e) => {
+        console.log(e.target.value);
         setSentence(e.target.value);
+        console.log(sentence);
     };
 
     return (

@@ -1,7 +1,7 @@
 const SentenceInput = (props) => (
     <>
         <label htmlFor="sentence">Sentence</label>
-        <input id="sentence"></input>
+        <input onInput={props.onInput} id="sentence" />
     </>
 );
 

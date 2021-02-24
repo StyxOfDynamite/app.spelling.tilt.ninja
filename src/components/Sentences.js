@@ -1,16 +1,15 @@
 const replaceWord = (word, sentence) => {
     let _s = '';
-    word.split('').forEach((letter) => {
+    word.split('').forEach(() => {
         _s += '_';
     });
-    console.log(sentence.replace(word, _s));
-    return '';
+    return sentence.replace(word, _s);
 };
 const Sentences = (props) => {
-    console.log(props);
+    const words = props.words;
     return (
         <div>
-            {props.words.map((word, index) => (
+            {words.map((word, index) => (
                 <p key={`sentence-${index}`}>
                     {replaceWord(word.word, word.sentence)}
                 </p>
