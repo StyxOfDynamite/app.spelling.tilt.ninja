@@ -1,9 +1,9 @@
 const Underline = (props) => {
+    const letters = props.word.split('');
     return (
-        <li key={props.index}>
-            {props.word.split('').map((letter, index) => (
-                <p key={index} className="underline">
-                    {props.className}
+        <li>
+            {letters.map((letter, index) => (
+                <p key={`${props.mode}-underline-${index}`} className="underline">
                 </p>
             ))}
         </li>

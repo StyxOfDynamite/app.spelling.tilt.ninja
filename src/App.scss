@@ -13,11 +13,12 @@
     color: white;
 }
 
-section .input {
+section input {
     padding: 0.5rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
+    margin: 1rem;
 }
 
 .word {
@@ -59,8 +60,9 @@ section .input {
 
 .input {
     display: flex;
-    flex-direction: column;
-    width: 300px;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-evenly;
     margin: auto;
+    max-width: 50vw;
 }
