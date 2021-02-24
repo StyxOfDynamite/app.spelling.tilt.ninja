@@ -1,3 +1,5 @@
+import { shuffle } from "./Shuffle";
+
 const replaceWord = (word, sentence) => {
     let _s = '';
     word.split('').forEach(() => {
@@ -6,7 +8,7 @@ const replaceWord = (word, sentence) => {
     return sentence.replace(word, _s);
 };
 const Sentences = (props) => {
-    const words = props.words;
+    const words = shuffle(props.words);
     return (
         <div>
             {words.map((word, index) => (
