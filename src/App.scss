@@ -25,11 +25,6 @@ section input {
     flex-direction: row;
     justify-content: space-between;
     margin: 1rem;
-
-    @media only screen and (max-width: 600px) {
-        flex-direction: column;
-        margin: 1rem 0 0 0;
-    }
 }
 
 .word {
@@ -80,5 +75,14 @@ section input {
     .no-print,
     .no-print * {
         display: none !important;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .input {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin: auto;
     }
 }
