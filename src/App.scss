@@ -47,6 +47,7 @@ section .input {
 
 .output {
     display: flex;
+    justify-content: space-evenly;
 }
 
 @media print {
