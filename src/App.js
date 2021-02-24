@@ -18,7 +18,6 @@ const App = () => {
     const [sentence, setSentence] = useState('');
 
     const onInput = (e) => {
-        e.preventDefault();
         setWord(e.target.value);
     };
 
