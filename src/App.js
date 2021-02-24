@@ -25,18 +25,20 @@ const App = () => {
     ];
 
     const onInput = (e) => {
-        setWord(e.target.value);
+        setWord(e.target.value.toLowerCase());
     };
 
     const onAddWord = () => {
-        updateWords((arr) => [
-            ...arr,
-            { word: word, syllables: syllables, sentence: sentence }
-        ]);
-        setWord('');
-        setSentence('');
-        setSyllables(1);
-        document.getElementById('word').focus();
+        if (word.length && sentence.length) {
+            updateWords((arr) => [
+                ...arr,
+                { word: word, syllables: syllables, sentence: sentence }
+            ]);
+            setWord('');
+            setSentence('');
+            setSyllables(1);
+            document.getElementById('word').focus();
+        }
     };
 
     const onChange = (e) => {
