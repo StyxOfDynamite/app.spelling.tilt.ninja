@@ -17,11 +17,11 @@ const Syllables = (props) => {
     return (
         <div>
             {syls.map((syl, index) => (
-                <div>
+                <div key={`div-${index}`}>
                     <h2 key={`header-${index}`}>{`${syl} Syllables`}</h2>
-                    {props.words.map((word) => {
+                    {props.words.map((word, index) => {
                         if (word.syllables === syl) {
-                            return <Underline word={word.word} />;
+                            return <Underline index={index} word={word.word} />;
                         }
                     })}
                 </div>

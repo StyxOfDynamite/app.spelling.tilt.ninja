@@ -1,13 +1,14 @@
-import './App.scss';
+import { useState } from 'react';
+import Alpha from './components/Alpha';
+import Boxes from './components/Boxes';
+import Sentences from './components/Sentences';
+import Syllables from './components/Syllables';
+import SyllablesInput from './components/SyllablesInput';
 import WordInput from './components/WordInput';
 import WordList from './components/WordList';
-import { useState } from 'react';
-import Boxes from './components/Boxes';
-import Alpha from './components/Alpha';
-import SyllablesInput from './components/SyllablesInput';
 import SentenceInput from './components/SentenceInput';
-import Syllables from './components/Syllables';
 import AddButton from './components/AddButton';
+import './App.scss';
 
 const App = () => {
     const [word, setWord] = useState('');
@@ -22,8 +23,12 @@ const App = () => {
     };
 
     const onAddWord = () => {
-        updateWords((arr) => [...arr, { word: word, syllables: syllables }]);
+        updateWords((arr) => [
+            ...arr,
+            { word: word, syllables: syllables, sentence: sentence }
+        ]);
         setWord('');
+        setSentence('');
     };
 
     const onChange = (e) => {
@@ -45,6 +50,7 @@ const App = () => {
                     <option value="alphabetical">Alphabetical</option>
                     <option value="boxes">Boxes</option>
                     <option value="syllables">Syllables</option>
+                    <option value="sentences">Sentences</option>
                 </select>
                 <h1>{mode}</h1>
             </header>
@@ -65,7 +71,8 @@ const App = () => {
                     {
                         alphabetical: <Alpha words={words} />,
                         boxes: <Boxes words={words} />,
-                        syllables: <Syllables words={words} />
+                        syllables: <Syllables words={words} />,
+                        sentences: <Sentences words={words} />
                     }[mode]}
             </section>
         </div>
