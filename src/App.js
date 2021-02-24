@@ -29,6 +29,7 @@ const App = () => {
         ]);
         setWord('');
         setSentence('');
+        setSyllables(1);
         document.getElementById('word').focus();
     };
 
