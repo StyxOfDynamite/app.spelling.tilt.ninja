@@ -63,10 +63,10 @@ const App = () => {
                     <h1>{mode}</h1>
                     {
                         {
-                            alphabetical: `Arrange the words from the list in alphabetical order.`,
-                            boxes: `Fill in the correct boxes with the words from the list.`,
-                            syllables: `Group the words by the number of syllables they have.`,
-                            sentences: `Fill in the words in the sentences below.`
+                            alphabetical: `Put the words in alphabetical order using the lines provided.`,
+                            boxes: `Put the correct letters into the boxes that matches the shape of the word best.`,
+                            syllables: `Put the word under the heading that matches the number of syllables it contains.`,
+                            sentences: `Put the best word in the blank that helps the sentence make sense.`
                         }[mode]
                     }
                 </div>

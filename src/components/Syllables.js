@@ -1,4 +1,4 @@
-import Underline from './Underline';
+import Word from './Word';
 
 const getSyllableGroups = (array) => {
     let syllableGroupings = [];
@@ -21,21 +21,19 @@ const Syllables = (props) => {
                     <h2 key={`syllables-header-${index}`}>
                         {`${syl} Syllables`}
                     </h2>
-                    <ol key={`syllables-list-${index}`}>
+                    <ul key={`syllables-list-${index}`}>
                         {props.words.map((word, wordIndex) => {
                             if (word.syllables === syl) {
                                 return (
-                                    <Underline
-                                        key={`syllables-${wordIndex}`}
-                                        mode="syllables"
-                                        index={wordIndex}
+                                    <Word
+                                        key={`word-syllables-${wordIndex}`}
                                         word={word.word}
                                     />
                                 );
                             }
                             return null;
                         })}
-                    </ol>
+                    </ul>
                 </div>
             ))}
         </div>
