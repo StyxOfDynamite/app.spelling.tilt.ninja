@@ -5,7 +5,12 @@ const replaceWord = (word, sentence) => {
     word.split('').forEach(() => {
         _s += '_';
     });
-    return sentence.replace(word, _s);
+
+    let searchMask = word;
+    let regEx = new RegExp(searchMask, 'ig');
+    let replaceMask = _s;
+
+    return sentence.replace(regEx, replaceMask);
 };
 const Sentences = (props) => {
     const words = shuffle(props.words);
