@@ -41,6 +41,10 @@ const App = () => {
         }
     };
 
+    const removeWord = (remove) => {
+        updateWords((words) => words.filter((word) => word != remove));
+    };
+
     const onChange = (e) => {
         setMode(e.value);
     };
@@ -83,7 +87,9 @@ const App = () => {
                 <AddButton onClick={onAddWord} />
             </section>
             <section className="output">
-                {words.length > 0 && <WordList words={words} />}
+                {words.length > 0 && (
+                    <WordList words={words} removeWord={removeWord} />
+                )}
                 {words.length > 0 &&
                     {
                         alphabetical: <Alpha words={words} />,
