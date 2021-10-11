@@ -1,11 +1,15 @@
+import { shuffle } from './Shuffle';
+
 const WordList = (props) => {
     function removeWord(word) {
         props.removeWord(word);
     }
 
+    const words = shuffle(props.words);
+
     return (
         <ul className="word-list">
-            {props.words.map((word, index) => (
+            {words.map((word, index) => (
                 <li key={index} className="word">
                     {word.word}
                     <button onClick={() => removeWord(word)}>X</button>
