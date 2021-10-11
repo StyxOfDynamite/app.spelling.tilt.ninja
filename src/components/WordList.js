@@ -1,6 +1,5 @@
 const WordList = (props) => {
     function removeWord(word) {
-        console.log(word);
         props.removeWord(word);
     }
 
