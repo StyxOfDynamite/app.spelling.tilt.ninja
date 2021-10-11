@@ -17,7 +17,7 @@ const isHanging = (l) => {
 };
 
 const isTall = (l) => {
-    return ['t', 'd', 'f', 'h', 'l', 'b'].includes(l);
+    return ['b', 'd', 'f', 'h', 'k', 'l', 't'].includes(l);
 };
 
 const Box = (props) => {
