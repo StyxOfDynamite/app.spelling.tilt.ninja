@@ -3,7 +3,7 @@ import { shuffle } from './Shuffle';
 const replaceWord = (word, sentence) => {
     let _s = '';
     word.split('').forEach(() => {
-        _s += '_';
+        _s += '__';
     });
 
     let searchMask = word;
