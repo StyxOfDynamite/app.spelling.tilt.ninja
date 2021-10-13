@@ -12,7 +12,9 @@ const WordList = (props) => {
             {words.map((word, index) => (
                 <li key={index} className="word">
                     {word.word}
-                    <button onClick={() => removeWord(word)}>X</button>
+                    <button class="no-print" onClick={() => removeWord(word)}>
+                        X
+                    </button>
                 </li>
             ))}
         </ul>
